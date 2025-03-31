@@ -24,6 +24,15 @@ body {
   text-transform: uppercase; 
 }
 
+.expenses-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expenses-column {
+    width: 48%; 
+}
+
 .header .back {
     background-color: #ff4747;
     color: white;

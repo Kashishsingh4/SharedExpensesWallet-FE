@@ -13,7 +13,16 @@
         <button class="back" onclick="goBack()">Back to Dashboard</button>
     </div>
     <div class="container">
-        <div id="expenses-list"></div>
+        <div class="expenses-columns">
+            <div class="expenses-column">
+                <h2>Pending Expenses</h2>
+                <div id="pending-expenses-list"></div>
+            </div>
+            <div class="expenses-column">
+                <h2>Settled Expenses</h2>
+                <div id="settled-expenses-list"></div>
+            </div>
+        </div>
     </div>
     <script src="./js/expenses.js"></script>
 </body>

@@ -16,14 +16,18 @@ body {
 .header {
     background-color: #2865a7;
     color: white;
-    padding: 20px;
+    padding: 25px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 5px auto;
+    width: 99.5%; 
+    border-radius: 3px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .header span {
-    font-size: 1.5em; 
+    font-size: 1.5em;
 }
 
 .header .logout {
@@ -118,14 +122,14 @@ button:hover {
 }
 
 .add-participant {
-  background-color: rgb(61, 57, 57);
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+    background-color: rgb(61, 57, 57);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .add-participant:hover {
-  background-color: grey; 
+    background-color: grey;
 }
