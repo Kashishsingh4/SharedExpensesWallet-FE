@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     const username = localStorage.getItem("username");
     if (username) {
@@ -6,9 +5,20 @@ $(document).ready(function () {
     } else {
         window.location.href = "index.html";
     }
+
+    $("#participant-type").change(function() {
+        if ($(this).val() === "equal") {
+            $("#specific-participants").hide();
+            $("#equal-participants").show();
+        } else {
+            $("#equal-participants").hide();
+            $("#specific-participants").show();
+        }
+    });
 });
 
 let participants = [];
+let divideParticipants = [];
 
 function viewExpenses() {
     window.location.href = "expenses.html"; 
@@ -41,6 +51,25 @@ function updateParticipantList() {
     $("#participant-list").html(participantHtml);
 }
 
+function addDivideParticipant() {
+    const username = $("#divide-username").val().trim();
+
+    if (!username) {
+        alert("Please provide a valid participant username.");
+        return;
+    }
+
+    divideParticipants.push({ username });
+
+    let divideHtml = '';
+    divideParticipants.forEach(participant => {
+        divideHtml += `<p>${participant.username}</p>`;
+    });
+    $("#divide-participants").html(divideHtml);
+
+    $("#divide-username").val('');
+}
+
 function addExpense() {
     const username = localStorage.getItem("username");
     const amount = parseFloat($("#expense-amount").val().trim());
@@ -51,7 +80,18 @@ function addExpense() {
         return;
     }
 
-    if (participants.length === 0) {
+    if (divideParticipants.length > 0 && participants.length > 0) {
+        alert("You cannot use both 'Divide Equally' and 'Specific Amounts' participants.");
+        return;
+    }
+
+    if (divideParticipants.length > 0) {
+        const equalAmount = amount / divideParticipants.length;
+        participants = divideParticipants.map(participant => ({
+            username: participant.username,
+            amountOwed: equalAmount
+        }));
+    } else if (participants.length === 0) {
         alert("Please add at least one participant.");
         return;
     }
@@ -79,7 +119,12 @@ function addExpense() {
             $("#expense-amount").val('');
             $("#expense-description").val('');
             participants = [];
+            divideParticipants = [];
+            $("#divide-participants").html('');
             updateParticipantList();
+            $("#participant-type").val("specific");
+            $("#equal-participants").hide();
+            $("#specific-participants").show();
         },
         error: function (xhr, status, error) {
             alert("Error adding expense: " + error);

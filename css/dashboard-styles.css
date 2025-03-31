@@ -20,24 +20,24 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px auto;
-    width: 99.5%; 
+    margin: 10px auto; 
+    width: 99%; 
     border-radius: 3px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .header span {
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 .header .logout {
     background-color: #ff4747;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 12px 25px; 
+    font-size: 1.1em;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px; 
 }
 
 .header .logout:hover {
@@ -52,53 +52,54 @@ body {
 }
 
 .content {
-    padding: 30px;
-    max-width: 1000px;
+    padding: 20px;
     background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 12px; 
+    width: 98%;
+    max-width: 950px; 
+   
 }
 
 .content h1 {
     color: #2865a7;
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.2em; 
+    margin-bottom: 25px; 
 }
 
 .content h2 {
-    margin-top: 20px;
+    margin-top: 25px; 
     color: #2865a7;
+    font-size: 1.8em; 
 }
 
 #expenses-list div {
-    padding: 10px;
+    padding: 12px; 
     background-color: #f1f1f1;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    margin-bottom: 12px; 
+    border-radius: 8px;
 }
 
 input[type="number"],
 input[type="text"] {
-    width: calc(100% - 10px);
-    padding: 10px;
-    margin: 10px 0;
+    width: calc(100% - 12px); 
+    padding: 12px;
+    margin: 12px 0;     
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
+    border-radius: 8px; 
+    font-size: 1.1em; 
 }
 
 .expense {
     background-color: #2865a7;
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 1em;
+    padding: 14px 25px; 
+    border-radius: 8px;
+    font-size: 1.1em; 
     cursor: pointer;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 button:hover {
@@ -106,10 +107,10 @@ button:hover {
 }
 
 #expense-details {
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 35px; 
+    padding: 25px; 
     background-color: #f1f1f1;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 #settle {
@@ -119,14 +120,15 @@ button:hover {
 #username-display {
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 1.2em; 
 }
 
 .add-participant {
     background-color: rgb(61, 57, 57);
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 15px; 
+    border-radius: 8px; 
     cursor: pointer;
 }
 

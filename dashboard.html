@@ -19,10 +19,23 @@
             <input type="text" id="expense-description" placeholder="Description" required>
             
             <h3>Participants</h3>
-            <input type="text" id="participant-username" placeholder="Participant's Username">
-            <input type="number" id="participant-amount" placeholder="Amount Owed">
-            <button class="add-participant" onclick="addParticipant()">Add Participant</button>
-            <div id="participant-list"></div>
+            <select id="participant-type">
+                <option value="specific">Specific Amounts</option>
+                <option value="equal">Divide Equally</option>
+            </select>
+
+            <div id="specific-participants">
+                <input type="text" id="participant-username" placeholder="Participant's Username">
+                <input type="number" id="participant-amount" placeholder="Amount Owed">
+                <button class="add-participant" onclick="addParticipant()">Add Participant</button>
+                <div id="participant-list"></div>
+            </div>
+
+            <div id="equal-participants" style="display: none;">
+                <input type="text" id="divide-username" placeholder="Participant's Username">
+                <button class="add-participant" onclick="addDivideParticipant()">Add Participant</button>
+                <div id="divide-participants"></div>
+            </div>
 
             <button class="expense" onclick="addExpense()">Add Expense</button>
             <button class="expense" onclick="viewExpenses()">View Expenses</button>
