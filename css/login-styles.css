@@ -1,11 +1,11 @@
-/* Reset margin, padding, and box sizing */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Set body height and styling */
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -15,7 +15,7 @@ body {
     overflow: hidden;
 }
 
-/* Header styling */
+
 .header {
     width: 100%;
     display: flex;
@@ -42,7 +42,7 @@ body {
     color: white;
 }
 
-/* Content Section */
+
 .content {
     display: flex;
     justify-content: center;
@@ -108,14 +108,14 @@ body {
     background-color: #004a8d;
 }
 
-/* Carousel Section */
+
 .carousel {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     top: 53%;
-    right: 150px; /* Shifted more to the left */
+    right: 150px; 
     transform: translateY(-50%);
     width: 350px;
 }
@@ -141,44 +141,44 @@ body {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    padding-bottom: 20px; /* Increased spacing below image */
+    padding-bottom: 20px; 
 }
 
 .carousel-item h3 {
-    font-size: 1.8em; /* Increased font size */
-    margin-bottom: 10 px; /* Added more space */
+    font-size: 1.8em; 
+    margin-bottom: 10 px; 
     font-weight: bold;
 }
 
 .carousel-item p {
-    font-size: 1.2em; /* Increased font size */
+    font-size: 1.2em; 
     color: #333;
     font-weight: bold;
 }
 
-/* Arrows Styling */
+
 .carousel-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 50px; /* Increased space between content and arrows */
+    margin-top: 50px; 
 }
 
 .carousel button {
     background-color: transparent;
     border: none;
-    font-size: 2.5em; /* Increased size */
+    font-size: 2.5em; 
     cursor: pointer;
     color: #2865a7;
-    margin: 0 15px; /* Added more space around arrows */
+    margin: 0 15px; 
 }
 
 .carousel button:hover {
     color: #004a8d;
 }
 
-/* Footer Styling */
+
 .footer {
     width: 100%;
     text-align: center;

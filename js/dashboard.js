@@ -11,7 +11,7 @@ $(document).ready(function () {
 let participants = [];
 
 function viewExpenses() {
-    window.location.href = "expenses.html"; // Corrected line
+    window.location.href = "expenses.html"; 
 }
 
 function addParticipant() {
