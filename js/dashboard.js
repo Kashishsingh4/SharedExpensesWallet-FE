@@ -1,3 +1,4 @@
+// dashboard.js
 $(document).ready(function () {
     const username = localStorage.getItem("username");
     if (username) {
@@ -5,70 +6,12 @@ $(document).ready(function () {
     } else {
         window.location.href = "index.html";
     }
-
-    loadExpenses(username);
 });
 
 let participants = [];
 
-function loadExpenses(username) {
-    $.get("http://localhost:5000/expenses", { username: username }, function (response) {
-        let sidebarHtml = '';
-
-        response.expenses.forEach(expense => {
-            if (!expense.settled) {
-                sidebarHtml += `<li class="sidebar-item" data-id="${expense._id}">${expense.description}</li>`;
-            }
-        });
-
-        $("#expense-sidebar-list").html(sidebarHtml);
-
-        $(".sidebar-item").click(function () {
-            const expenseId = $(this).data("id");
-            viewExpenseDetails(expenseId);
-        });
-    }).fail(function (xhr, status, error) {
-        console.error("Error loading expenses:", error);
-        alert("Error loading expenses.");
-    });
-}
-
-function viewExpenseDetails(expenseId) {
-    $.get(`http://localhost:5000/expenses/${expenseId}`, function (response) {
-        const expense = response.expense;
-        $("#expense-detail-description").text(expense.description);
-        $("#expense-detail-amount").text(`Amount: $${expense.amount}`);
-        
-        let participantsHtml = '<h4>Participants</h4>';
-        expense.participants.forEach(participant => {
-            participantsHtml += `<p>${participant.username}: $${participant.amountOwed}</p>`;
-        });
-
-        $("#expense-detail-participants").html(participantsHtml);
-        $("#expense-details").show();
-        $("#expense-details").data("expense-id", expenseId);
-    }).fail(function (xhr, status, error) {
-        console.error("Error fetching expense details:", error);
-        alert("Error fetching expense details.");
-    });
-}
-
-function settleExpense() {
-    const expenseId = $("#expense-details").data("expense-id");
-
-    $.ajax({
-        url: `http://localhost:5000/expenses/settle/${expenseId}`,
-        type: "PUT",
-        success: function (response) {
-            alert("Expense settled.");
-            loadExpenses(localStorage.getItem("username"));
-            $("#expense-details").hide();
-        },
-        error: function (xhr, status, error) {
-            alert("Error settling expense: " + error);
-            console.error("Error settling expense:", error);
-        }
-    });
+function viewExpenses() {
+    window.location.href = "expenses.html"; // Corrected line
 }
 
 function addParticipant() {
@@ -84,7 +27,6 @@ function addParticipant() {
         username: participantUsername,
         amountOwed: participantAmount
     });
-
 
     updateParticipantList();
     $("#participant-username").val('');
@@ -114,10 +56,8 @@ function addExpense() {
         return;
     }
 
-   
     const totalOwed = participants.reduce((sum, participant) => sum + participant.amountOwed, 0);
 
-   
     if (totalOwed > amount) {
         alert("The total amount owed by participants cannot exceed the total expense amount.");
         return;
@@ -136,7 +76,6 @@ function addExpense() {
         contentType: "application/json",
         data: JSON.stringify(expense),
         success: function (response) {
-            loadExpenses(username);
             $("#expense-amount").val('');
             $("#expense-description").val('');
             participants = [];

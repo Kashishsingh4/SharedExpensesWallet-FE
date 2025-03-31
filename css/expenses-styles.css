@@ -1,0 +1,57 @@
+/* expenses-styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header {
+    background-color: #2865a7;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header span {
+    font-size: 1.5em; /* Increase font size of "Expenses for" */
+}
+
+#username-display {
+  font-size: 1.8em; /* Increase font size of the username */
+  font-weight: bold;
+  text-transform: uppercase; /* Make the username bold */
+}
+
+.header .back {
+    background-color: #ff4747;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container {
+    margin: 30px;
+}
+
+.expense-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em; /* increase the font size of expense items */
+}
+
+.settle-expense {
+    background-color: #2865a7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
