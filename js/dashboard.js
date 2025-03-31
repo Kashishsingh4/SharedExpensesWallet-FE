@@ -1,4 +1,4 @@
-// dashboard.js
+
 $(document).ready(function () {
     const username = localStorage.getItem("username");
     if (username) {
