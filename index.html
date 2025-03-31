@@ -10,10 +10,13 @@
 </head>
 
 <body>
+    <!-- Header Section -->
     <div class="header">
-        <img src="C:\Users\kashish singh\Pictures\Screenshot 2024-04-21 174901.png" alt="Splitwise Logo" class="logo-left">
+        <img src="C:\Users\kashish singh\Pictures\Screenshot 2024-04-21 174901.png" alt="SplitItUp Logo" class="logo-left">
         <span class="welcome-text">WELCOME TO SplitItUp!</span>
     </div>
+
+    <!-- Content Section -->
     <div class="content">
         <div class="text-section">
             <h1>Emphasizing Convenience</h1>
@@ -25,7 +28,67 @@
             </div>
         </div>
     </div>
+
+    <!-- Carousel Section -->
+    <div class="carousel">
+        <button id="prev">&lt;</button> <!-- Left Arrow -->
+        <div class="carousel-inner">
+            <div class="carousel-items">
+                <div class="carousel-item">
+                    <h3>Add an Expense</h3>
+                    <img src="./assets/expense.png" alt="Add an Expense">
+                    <p>Keep track of your expenses by adding them quickly and easily to the app.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Add Members</h3>
+                    <img src="./assets/members.png" alt="Add Members">
+                    <p>Invite friends or family to split the costs of shared expenses with you.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Divide the Money</h3>
+                    <img src="./assets/divide.png" alt="Divide the Money">
+                    <p>Automatically calculate how much each person owes and simplify the division of funds.</p>
+                </div>
+            </div>
+        </div>
+        <button id="next">&gt;</button> <!-- Right Arrow -->
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 SplitItUp | Contact: <a href="mailto:support@splititup.com">support@splititup.com</a> | Phone: +91-9876543210</p>
+    </footer>
+
     <script src="./js/index.js"></script>
+    <script>
+        // JavaScript for carousel functionality
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-item');
+            const totalSlides = slides.length;
+            if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            document.querySelector('.carousel-items').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        document.getElementById('prev').addEventListener('click', function () {
+            showSlide(currentIndex - 1);
+        });
+
+        document.getElementById('next').addEventListener('click', function () {
+            showSlide(currentIndex + 1);
+        });
+
+        // Initially show the first slide
+        showSlide(currentIndex);
+    </script>
+
 </body>
 
 </html>
