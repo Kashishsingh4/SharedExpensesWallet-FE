@@ -8,9 +8,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    display: flex; /* Add flexbox to center the content */
-    flex-direction: column; /* Stack header and container vertically */
-    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header {
@@ -42,9 +42,9 @@ body {
 
 .container {
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    flex: 1; /* Allow container to grow and take remaining space */
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .content {
@@ -53,8 +53,8 @@ body {
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 90%; /* Adjust width as needed */
-    max-width: 800px; /* or whatever max width you want */
+    width: 90%;
+    max-width: 800px;
 }
 
 .content h1 {
@@ -112,6 +112,20 @@ button:hover {
     background-color: #2865a7;
 }
 
-#username-display{
+#username-display {
     text-transform: uppercase;
+    font-weight: bold;
+}
+
+.add-participant {
+  background-color: rgb(61, 57, 57);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-participant:hover {
+  background-color: grey; 
 }

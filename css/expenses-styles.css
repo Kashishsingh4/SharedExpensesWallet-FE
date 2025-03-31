@@ -1,4 +1,4 @@
-/* expenses-styles.css */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -15,13 +15,13 @@ body {
 }
 
 .header span {
-    font-size: 1.5em; /* Increase font size of "Expenses for" */
+    font-size: 1.5em; 
 }
 
 #username-display {
-  font-size: 1.8em; /* Increase font size of the username */
+  font-size: 1.8em; 
   font-weight: bold;
-  text-transform: uppercase; /* Make the username bold */
+  text-transform: uppercase; 
 }
 
 .header .back {
@@ -44,7 +44,7 @@ body {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 1.1em; /* increase the font size of expense items */
+    font-size: 1.1em; 
 }
 
 .settle-expense {
