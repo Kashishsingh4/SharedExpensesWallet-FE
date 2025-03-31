@@ -1,0 +1,145 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+.header {
+    background-color: #2865a7;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header span {
+    font-size: 1.5em;
+}
+
+.header .logout {
+    background-color: #ff4747;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.header .logout:hover {
+    background-color: #e63b3b;
+}
+
+
+.container {
+    display: flex;
+    margin: 30px;
+}
+
+
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#expense-sidebar-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#expense-sidebar-list li {
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#expense-sidebar-list li:hover {
+    background-color: #e1e1e1;
+}
+
+
+.content {
+    padding: 30px;
+    max-width: 1000px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex: 1;
+}
+
+.content h1 {
+    color: #2865a7;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.content h2 {
+    margin-top: 20px;
+    color: #2865a7;
+}
+
+#expenses-list div {
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+input[type="number"], input[type="text"] {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.expense {
+    background-color: #2865a7;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1f4a76;
+}
+
+
+#expense-details {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+#settle{
+    background-color: #2865a7;
+}

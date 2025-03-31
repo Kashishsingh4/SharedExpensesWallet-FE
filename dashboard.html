@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SplitItUp</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/dashboard-styles.css">
+</head>
+<body>
+    <div class="header">
+        <span>Welcome, <span id="username-display"></span></span>
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Expenses</h2>
+            <ul id="expense-sidebar-list"></ul>
+        </div>
+        <div class="content">
+            <h2>Add an Expense</h2>
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+            <input type="text" id="expense-description" placeholder="Description" required>
+            
+            <h3>Participants</h3>
+            <input type="text" id="participant-username" placeholder="Participant's Username">
+            <input type="number" id="participant-amount" placeholder="Amount Owed">
+            <button class="add-participant" onclick="addParticipant()">Add Participant</button>
+            <div id="participant-list"></div>
+
+            <button class="expense" onclick="addExpense()">Add Expense</button>
+
+            <div id="expense-details" style="display:none;">
+                <h3>Expense Details</h3>
+                <p id="expense-detail-description"></p>
+                <p id="expense-detail-amount"></p>
+                <div id="expense-detail-participants"></div>
+                <button id="settle" onclick="settleExpense()">Settle Expense</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #2865a7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    max-width: 120px;
+    position: absolute;
+    left: 20px;
+}
+
+.welcome-text {
+    font-size: xx-large;
+    font-weight: bold;
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.text-section {
+    max-width: 80%;
+}
+
+.text-section h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.text-section p {
+    font-size: 1em;
+    margin-bottom: 25px;
+}
+
+.username-container {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.username-container h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.username-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.username-container button {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #2865a7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.username-container button:hover {
+    background-color: #2865a7;
+}
