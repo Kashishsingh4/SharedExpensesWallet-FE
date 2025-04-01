@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Expenses</title>
-    <link rel="stylesheet" href="./css/search-styles.css">
+    <link rel="stylesheet" href="search-styles.css">
 </head>
-
 <body>
     <header>
         <h1>Search Settled Expenses</h1>
-        <button class="dashboard-btn" onclick="goBack()">Back to Dashboard</button>
     </header>
+
+    <!-- Back to Dashboard Button -->
+    <div class="back-to-dashboard">
+        <a href="dashboard.html" class="back-btn">Back to Dashboard</a>
+    </div>
 
     <div class="search-container">
         <form id="search-form">
+            <label for="search-username">Enter Username:</label>
+            <input type="text" id="search-username" name="username" placeholder="Search by username" required>
+
             <label for="search-description">Enter Description:</label>
-            <input type="text" id="search-description" name="description" placeholder="Search expenses by description"
-                required>
+            <input type="text" id="search-description" name="description" placeholder="Search by description" required>
+            
             <button type="submit">Search</button>
         </form>
 
@@ -26,38 +31,43 @@
     </div>
 
     <script>
-
-        function goBack() {
-            window.location.href = "dashboard.html";
-        }
-        document.getElementById('search-form').addEventListener('submit', async (event) => {
+        document.getElementById("search-form").addEventListener("submit", async (event) => {
             event.preventDefault();
-            const description = document.getElementById('search-description').value;
+
+            const description = document.getElementById("search-description").value;
+            const username = document.getElementById("search-username").value; // Assuming an input field for username exists
 
             try {
-                const response = await fetch("http://localhost:5000/api/search?description=" + description);
+                const response = await fetch(`http://localhost:5000/api/search?description=${encodeURIComponent(description)}&username=${encodeURIComponent(username)}`);
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch expenses");
+                }
+
                 const data = await response.json();
 
-                const resultsContainer = document.getElementById('search-results');
-                resultsContainer.innerHTML = '';
+                console.log("Data received from API:", data); // Debugging log
+
+                const resultsContainer = document.getElementById("search-results");
+                resultsContainer.innerHTML = ""; // Clear previous results
 
                 if (data.length > 0) {
-                    data.forEach(expense => {
-                        const expenseDiv = document.createElement('div');
-                        expenseDiv.classList.add('expense-item');
+                    data.forEach((expense) => {
+                        const expenseDiv = document.createElement("div");
+                        expenseDiv.classList.add("expense-item");
                         expenseDiv.innerHTML = `<p><strong>Description:</strong> ${expense.description}</p>
                                                 <p><strong>Amount:</strong> $${expense.amount}</p>
-                                                <p><strong>Settled:</strong> ${expense.settled ? 'Yes' : 'No'}</p>`;
+                                                <p><strong>Settled:</strong> ${expense.settled ? "Yes" : "No"}</p>
+                                                <p><strong>Username:</strong> ${expense.username}</p>`;
                         resultsContainer.appendChild(expenseDiv);
                     });
                 } else {
-                    resultsContainer.innerHTML = '<p>No settled expenses found for this description.</p>';
+                    resultsContainer.innerHTML = "<p>No settled expenses found for this description and username.</p>";
                 }
             } catch (error) {
-                console.error('Error fetching data:', error);
+                console.error("Error fetching data:", error);
             }
         });
     </script>
 </body>
-
 </html>
