@@ -8,37 +8,48 @@
     <link rel="stylesheet" href="./css/dashboard-styles.css">
 </head>
 <body>
-    <div class="header">
-        <span>Welcome, <span id="username-display"></span></span>
-        <button class="logout" onclick="logout()">Logout</button>
-    </div>
+    <header class="header">
+        <div class="header-content">
+            <h1>SplitItUp</h1>
+            <div class="user-info">
+                <span>Welcome, <span id="username-display"></span></span>
+                <a href="search.html" class="search-btn">🔍 Search Expenses</a>
+                <button class="logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
-        <div class="content">
+        <div class="dashboard-card">
             <h2>Add an Expense</h2>
-            <input type="number" id="expense-amount" placeholder="Amount" required>
-            <input type="text" id="expense-description" placeholder="Description" required>
-            
-            <h3>Participants</h3>
-            <select id="participant-type">
-                <option value="specific">Specific Amounts</option>
-                <option value="equal">Divide Equally</option>
-            </select>
+            <div class="expense-form">
+                <input type="number" id="expense-amount" placeholder="Amount" required>
+                <input type="text" id="expense-description" placeholder="Description" required>
 
-            <div id="specific-participants">
-                <input type="text" id="participant-username" placeholder="Participant's Username">
-                <input type="number" id="participant-amount" placeholder="Amount Owed">
-                <button class="add-participant" onclick="addParticipant()">Add Participant</button>
-                <div id="participant-list"></div>
+                <h3>Participants</h3>
+                <select id="participant-type">
+                    <option value="specific">Specific Amounts</option>
+                    <option value="equal">Divide Equally</option>
+                </select>
+
+                <div id="specific-participants">
+                    <input type="text" id="participant-username" placeholder="Participant's Username">
+                    <input type="number" id="participant-amount" placeholder="Amount Owed">
+                    <button class="add-btn" onclick="addParticipant()">➕ Add</button>
+                    <div id="participant-list"></div>
+                </div>
+
+                <div id="equal-participants" style="display: none;">
+                    <input type="text" id="divide-username" placeholder="Participant's Username">
+                    <button class="add-btn" onclick="addDivideParticipant()">➕ Add</button>
+                    <div id="divide-participants"></div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="expense-btn" onclick="addExpense()">➕ Add Expense</button>
+                    <button class="expense-btn" onclick="viewExpenses()">📜 View Expenses</button>
+                </div>
             </div>
-
-            <div id="equal-participants" style="display: none;">
-                <input type="text" id="divide-username" placeholder="Participant's Username">
-                <button class="add-participant" onclick="addDivideParticipant()">Add Participant</button>
-                <div id="divide-participants"></div>
-            </div>
-
-            <button class="expense" onclick="addExpense()">Add Expense</button>
-            <button class="expense" onclick="viewExpenses()">View Expenses</button>
         </div>
     </div>
 
