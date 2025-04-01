@@ -1,137 +1,138 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
+/* Body Styling */
+body {
+    background-color: #f4f4f4;
+}
+
+/* Header */
 .header {
-    background-color: #2865a7;
+    background-color: #007bff;
     color: white;
-    padding: 25px 25px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px auto; 
-    width: 99%; 
-    border-radius: 3px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-.header span {
-    font-size: 1.6em;
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header .logout {
-    background-color: #ff4747;
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info span {
+    font-size: 16px;
+}
+
+.search-btn {
+    background-color: white;
+    color: #007bff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-btn:hover {
+    background-color: #e6f0ff;
+}
+
+.logout {
+    background-color: #dc3545;
     color: white;
+    padding: 8px 15px;
     border: none;
-    padding: 12px 25px; 
-    font-size: 1.1em;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 8px; 
 }
 
-.header .logout:hover {
-    background-color: #e63b3b;
+.logout:hover {
+    background-color: #a71d2a;
 }
 
+/* Container */
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex: 1;
+    margin-top: 20px;
 }
 
-.content {
+/* Dashboard Card */
+.dashboard-card {
+    background: white;
     padding: 20px;
-    background-color: white;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 12px; 
-    width: 98%;
-    max-width: 950px; 
-   
-}
-
-.content h1 {
-    color: #2865a7;
-    font-size: 2.2em; 
-    margin-bottom: 25px; 
-}
-
-.content h2 {
-    margin-top: 25px; 
-    color: #2865a7;
-    font-size: 1.8em; 
-}
-
-#expenses-list div {
-    padding: 12px; 
-    background-color: #f1f1f1;
-    margin-bottom: 12px; 
+    width: 500px;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="number"],
-input[type="text"] {
-    width: calc(100% - 12px); 
-    padding: 12px;
-    margin: 12px 0;     
-    border: 1px solid #ccc;
-    border-radius: 8px; 
-    font-size: 1.1em; 
+.dashboard-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.expense {
-    background-color: #2865a7;
-    color: white;
-    border: none;
-    padding: 14px 25px; 
-    border-radius: 8px;
-    font-size: 1.1em; 
-    cursor: pointer;
+/* Form Styling */
+.expense-form input,
+.expense-form select {
     width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+/* Add Buttons */
+.add-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
     margin-top: 15px;
 }
 
-button:hover {
-    background-color: #1f4a76;
-}
-
-#expense-details {
-    margin-top: 35px; 
-    padding: 25px; 
-    background-color: #f1f1f1;
-    border-radius: 8px;
-}
-
-#settle {
-    background-color: #2865a7;
-}
-
-#username-display {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.2em; 
-}
-
-.add-participant {
-    background-color: rgb(61, 57, 57);
+.expense-btn {
+    background-color: #007bff;
     color: white;
+    padding: 10px;
     border: none;
-    padding: 8px 15px; 
-    border-radius: 8px; 
+    border-radius: 5px;
     cursor: pointer;
+    width: 48%;
 }
 
-.add-participant:hover {
-    background-color: grey;
+.expense-btn:hover {
+    background-color: #0056b3;
 }
