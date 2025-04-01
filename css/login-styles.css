@@ -1,10 +1,8 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     font-family: Arial, sans-serif;
@@ -14,7 +12,6 @@ body {
     background-color: #f8f9fa;
     overflow: hidden;
 }
-
 
 .header {
     width: 100%;
@@ -31,17 +28,32 @@ body {
 }
 
 .header img {
-    max-width: 120px;
+    max-width: 150px;
+    max-height: 75px;
     position: absolute;
     left: 20px;
+    animation: rotateLogo 5s linear infinite; /* Added rotation animation */
+}
+
+@keyframes rotateLogo {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .welcome-text {
-    font-size: xx-large;
+    font-size:55px;
     font-weight: bold;
     color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typeWriter 5s steps(30, end) forwards;
+    text-align: center;
 }
 
+@keyframes typeWriter {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
 
 .content {
     display: flex;
@@ -108,14 +120,13 @@ body {
     background-color: #004a8d;
 }
 
-
 .carousel {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     top: 53%;
-    right: 150px; 
+    right: 150px;
     transform: translateY(-50%);
     width: 350px;
 }
@@ -141,43 +152,41 @@ body {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    padding-bottom: 20px; 
+    padding-bottom: 20px;
 }
 
 .carousel-item h3 {
-    font-size: 1.8em; 
-    margin-bottom: 10 px; 
+    font-size: 1.8em;
+    margin-bottom: 10 px;
     font-weight: bold;
 }
 
 .carousel-item p {
-    font-size: 1.2em; 
+    font-size: 1.2em;
     color: #333;
     font-weight: bold;
 }
-
 
 .carousel-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 50px; 
+    margin-top: 50px;
 }
 
 .carousel button {
     background-color: transparent;
     border: none;
-    font-size: 2.5em; 
+    font-size: 2.5em;
     cursor: pointer;
     color: #2865a7;
-    margin: 0 15px; 
+    margin: 0 15px;
 }
 
 .carousel button:hover {
     color: #004a8d;
 }
-
 
 .footer {
     width: 100%;

@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,19 +6,9 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body Styling */
+
 body {
     background-color: #f4f4f4;
-}
-
-/* Header */
-.header {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .header-content {
@@ -64,18 +54,17 @@ body {
     background-color: #a71d2a;
 }
 
-/* Container */
+
 .container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-/* Dashboard Card */
 .dashboard-card {
     background: white;
-    padding: 20px;
-    width: 500px;
+    padding: 40px; 
+    width: 700px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -85,7 +74,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* Form Styling */
+
 .expense-form input,
 .expense-form select {
     width: 100%;
@@ -99,7 +88,7 @@ h3 {
     margin-top: 10px;
 }
 
-/* Add Buttons */
+
 .add-btn {
     background-color: #28a745;
     color: white;
@@ -116,7 +105,7 @@ h3 {
     background-color: #218838;
 }
 
-/* Action Buttons */
+
 .action-buttons {
     display: flex;
     justify-content: space-between;
@@ -135,4 +124,74 @@ h3 {
 
 .expense-btn:hover {
     background-color: #0056b3;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header {
+    background-color: #2865a7;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px 0 30px;
+    border-radius: 3px;
+    width: calc(100% - 40px);
+}
+
+.header span {
+    font-size: 1.5em;
+}
+
+#username-display {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.expenses-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expenses-column {
+    width: 48%;
+}
+
+.header .back {
+    background-color: #ff4747;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container {
+    margin: 30px;
+}
+
+.expense-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+
+.settle-expense {
+    background-color: #2865a7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }

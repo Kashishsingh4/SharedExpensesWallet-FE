@@ -7,7 +7,7 @@ body {
 
 .header {
     background-color: #2865a7;
-    color: white;
+    color: #ffffff;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -64,3 +64,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.back:hover {
+    background-color: #a71d2a;
+  }
