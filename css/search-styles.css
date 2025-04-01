@@ -1,10 +1,8 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4; /* Same background as expenses page */
-  color: #333;
+  background-color: #f4f4f4; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,21 +10,41 @@ body {
   min-height: 100vh;
 }
 
-header {
-  background-color: #2865a7;  /* Match the header color */
+.header {
+  background-color: #2865a7;  
   color: #ffffff;
-  padding: 20px;
+  padding: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 96%;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 5px;
+  left: 5px;
+
   z-index: 100;
 }
 
-/* Search Container */
+.header span {
+  font-size: 1.5em;
+}
+
+.header .back-btn {
+  background-color: #ff4747;
+  color: white;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  position: absolute; 
+  right: 50px; 
+}
+
+.header .back-btn:hover {
+  background-color: #a71d2a;
+}
+
 .search-container {
   background: white;
   padding: 20px;
@@ -34,11 +52,10 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 500px;
-  margin-top: 80px; /* Added top margin for header space */
+  margin-top: 80px; 
   text-align: center;
 }
 
-/* Input Fields */
 .search-container input {
   width: 90%;
   padding: 10px;
@@ -48,7 +65,6 @@ header {
   font-size: 16px;
 }
 
-/* Buttons */
 .search-container button {
   background-color: #28a745;
   color: white;
@@ -64,13 +80,11 @@ header {
   background-color: #218838;
 }
 
-/* Search Results */
 #search-results {
   margin-top: 20px;
   text-align: left;
 }
 
-/* Expense Item */
 .expense-item {
   background: #ffffff;
   padding: 15px;
@@ -80,7 +94,6 @@ header {
   border-left: 5px solid #007bff;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
   .search-container {
       width: 100%;
@@ -91,7 +104,7 @@ header {
       width: 100%;
   }
 }
-/* Back to Dashboard Button */
+
 .back-to-dashboard {
   text-align: center;
   margin-top: 50px;

@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Expenses</title>
-    <link rel="stylesheet" href="search-styles.css">
+    <link rel="stylesheet" href="./css/search-styles.css">
 </head>
 <body>
-    <header>
-        <h1>Search Settled Expenses</h1>
-    </header>
-
-    <!-- Back to Dashboard Button -->
-    <div class="back-to-dashboard">
+    <header class="header">
+        <span>Search Settled Expenses</span>
         <a href="dashboard.html" class="back-btn">Back to Dashboard</a>
-    </div>
+    </header>
 
     <div class="search-container">
         <form id="search-form">
@@ -35,7 +31,7 @@
             event.preventDefault();
 
             const description = document.getElementById("search-description").value;
-            const username = document.getElementById("search-username").value; // Assuming an input field for username exists
+            const username = document.getElementById("search-username").value; 
 
             try {
                 const response = await fetch(`http://localhost:5000/api/search?description=${encodeURIComponent(description)}&username=${encodeURIComponent(username)}`);
@@ -46,10 +42,10 @@
 
                 const data = await response.json();
 
-                console.log("Data received from API:", data); // Debugging log
+                console.log("Data received from API:", data); 
 
                 const resultsContainer = document.getElementById("search-results");
-                resultsContainer.innerHTML = ""; // Clear previous results
+                resultsContainer.innerHTML = ""; 
 
                 if (data.length > 0) {
                     data.forEach((expense) => {
